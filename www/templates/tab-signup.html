@@ -7,41 +7,39 @@
 
 <ion-view view-title="Sign Up" class="loginBg" hide-nav-bar="true" >
   <ion-content class="padding">
+ <!-- Logo sin poner pero esta el hueco -->
 
   <div class="row responsive-sm padding remvoeBP">
 	  <div class="col">
 		   <div class="app-logo"><img src=""></div>
 			
-			<div class="list list-inset removePM">
 
-<div class="row">
-<div class="button-bar">
-  <a class="button button-large icon-left ion-ios-people button-balanced">Usuario </a>
-  <a class="button button-large icon-left ion-ios-briefcase button-royal">Empresa</a>
- </div>
-</div>
-		
-			  <label class="item item-input"><input type="text" placeholder="Nombre"> </label>
-			  <label class="item item-input"><input type="text" placeholder="Email"> </label>
-				<label class="item item-input"><input type="text" placeholder="Telefono"> </label>
-				<label class="item item-input"><input type="text" placeholder="NIF"> </label>
-						<label class=" item row">
-	<ion-option-button  class="button ion-woman col" ng-model="sexo" ng-value="Hombre"><h3>Hombre</h3> </ion-option-button>
-  <button class="button ion-woman col" ng-model="sexo" ng-value="Hombre"><h3>Mujer</h3> </button>
+<!-- SELECCIONAR EMPRESA O USUARIO -->
 
+
+
+<!-- Empresa o usuario -->
+<label class ="item row">
+   
+	<ion-radio ng-model="choice" class=" button button-energized ion-woman col" ng-model="sexo" ng-value="USUARIO" ng-value="'A'">USUARIO</ion-radio>
+  <ion-radio ng-model="choice" class="button button-balanced ion-briefcase col" ng-model="sexo" ng-value="EMPRESA" ng-value="'B'">EMPRESA</ion-radio>
+	
 </label>
-				<label class="item item-input"><input type="text" placeholder="Dirrecion"> </label>
-				<label class="item item-input"><input type="text" placeholder="ALGO MAS"> </label>
-				
-			  <label class="item item-input"><input type="password" placeholder="Contraseña"> </label>
-			  <label class="item item-input"><input type="password" placeholder="Confirmar contraseña"> </label>
-			</div>
 
+
+	
+
+<!-- Para el formulario de registro un pequeño ejemplo -->
+<!-- <label class="item item-input"><input type="text" placeholder="Nombre"> </label> -->
+			  
+
+
+<!-- contraseña -->
+				<!--<label class="item item-input"><input type="password" placeholder="Confirmar contraseña"> </label> -->
+			
 			<div class="loginButton"><button class="button ion-person button-block button-stable"> Registrarse </button>  </div>
 	  </div>
   </div>
-
-
 
   </ion-content>
 </ion-view>
