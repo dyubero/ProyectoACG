@@ -5779,7 +5779,7 @@ button.item.item-complex {
   z-index: 2;
   padding: 16px 49px 16px 16px;
   border: none;
-  background-color: #fff; }
+  background-color: transparent; }
 
 a.item-content {
   display: block;
@@ -7023,8 +7023,8 @@ select[readonly] {
 
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
-input[type="radio"][readonly],
-input[type="checkbox"][readonly] {
+input[type="radio"][disabled],
+input[type="checkbox"][disabled] {
   background-color: transparent; }
 
 /**
@@ -7417,7 +7417,7 @@ input:checked + .checkbox-icon:after {
   left: -9999px; }
   .item-radio input:checked ~ .item-content {
     /* style the item content when its checked */
-    background: #f7f7f7; }
+    background: transparent; }
   .item-radio input:checked ~ .radio-icon {
     /* show the checkmark icon when its checked */
     visibility: visible; }
@@ -7887,7 +7887,7 @@ progress {
   .button.button-balanced {
     border-color: #28a54c;
     background-color: #33cd5f;
-    color: #fff; }
+    color: #000; }
     .button.button-balanced:hover {
       color: #fff;
       text-decoration: none; }
@@ -7914,7 +7914,7 @@ progress {
   .button.button-energized {
     border-color: #e6b500;
     background-color: #ffc900;
-    color: #fff; }
+    color: #000; }
     .button.button-energized:hover {
       color: #fff;
       text-decoration: none; }
