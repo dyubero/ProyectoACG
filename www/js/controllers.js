@@ -11,6 +11,8 @@ angular.module('starter.controllers', [])
 
   // Form data for the login modal
   $scope.loginData = {};
+  
+  
 
   //--------------------------------------------
    $scope.login = function(user) {
@@ -21,12 +23,20 @@ angular.module('starter.controllers', [])
 		}
 
 		if(user.username=='Prueba@gmail.com' && user.password=='demo'){
-			$location.path('/app/dashboard');
+			$location.path('/app/area');
 		}else{
 			$scope.showAlert('CONTRASEÑA O USUARIO INVALIDO.');	
 		}
 		
 	};
+    
+    
+  
+  
+
+
+    
+    
   //--------------------------------------------
   $scope.logout = function() {   $location.path('/app/login');   };
   //--------------------------------------------
@@ -48,7 +58,51 @@ angular.module('starter.controllers', [])
 	$scope.profile = Profiles.get($stateParams.profileId);
 })
 
+
+
 .controller('DashCtrl', function($scope, $stateParams , Profiles) {
 	$scope.profiles = Profiles.all();
-});
+ })
+ 
+.controller('singinCtrl', function($scope, $stateParams , Profiles) {
+	$scope.profiles = Profiles.all();
+ })
+ 
+ .controller('singupCtrl', function($scope, $http) {
+      $scope.showFormUser = true;
+      $scope.showFormEmpresa = false;
+      window.alert("hola");
+      //funcion para mostrar el formulario de usuario al pulsar boton
+	$scope.showForm1 = function(){
+      $scope.showFormUser = true;
+      $scope.showFormEmpresa = false;
+    };
+    
+    //funcion para mostrar el formulario de empresa al pulsar boton
+    $scope.showForm2 = function(){
+      $scope.showFormUser = false;
+      $scope.showFormEmpresa = true;
+    };
+ 
+ 
+ 
 
+    $scope.data = {};
+
+    $scope.submit = function(){
+        var link = 'http://localHost:8080/PHPFilesACG/api.php';
+
+        $http.post(link, {"username": $scope.data.username,"userPassw":$scope.data.username }).then(function (res){
+            $scope.response = res.data;
+        });
+    };
+})
+ .controller('AreaCtrl', function($scope, $stateParams , Profiles) {
+	$scope.profiles = Profiles.all();
+ })
+
+
+    
+  
+    ;
+ 

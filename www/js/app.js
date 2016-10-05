@@ -20,6 +20,14 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+  
+  
+  
+  
+  
+  
+  
+  
 
      $rootScope.authStatus = false;
 	 //stateChange event
@@ -33,15 +41,18 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 		console.log("URL : "+toState.url);
-		if(toState.url=='/dashboard'){
+		if(toState.url=='/area'){
 			console.log("match : "+toState.url);
 			$timeout(function(){
 				angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
 			},1000);
 		}	
 	});
-
+        
 })
+
+
+
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -59,7 +70,8 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/tab-signin.html'
+        templateUrl: 'templates/tab-signin.html',
+        controller: 'singinCtrl'
       }
     },
 	authStatus: false
@@ -69,11 +81,24 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     views: {
       'menuContent': {
         templateUrl: 'templates/tab-signup.html',
+        controller: 'singupCtrl'
       }
    },
 	authStatus: false
   })
 //--------------------------------------
+
+
+.state('app.area', {
+    url: '/area',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/area.html',
+        controller: 'AreaCtrl'
+      }
+    },
+    authStatus: true
+  })
 
 
   .state('app.dashboard', {

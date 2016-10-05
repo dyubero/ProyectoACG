@@ -17,25 +17,118 @@
 <!-- SELECCIONAR EMPRESA O USUARIO -->
 
 
-
+<body ng-app="starter" ng-controller="singupCtrl">
 <!-- Empresa o usuario -->
-<label class ="item row">
+<label class ="item" style="background-color:#E0E0E0;">
+   <div class="row">
+	<ion-radio ng-model="choice" class=" button button-energized col " ng-model="sexo"   ng-click="showForm1()"><h5><div class="ion-man"></div>USUARIO </h5></ion-radio>
+  <ion-radio ng-model="choice" class="button button-balanced  col" ng-model="sexo" ng-value="false" ng-click="showForm2()"><h5><div class="ion-briefcase"></div>EMPRESA</h5></ion-radio>
+   </div>
+    <div ng-show="showFormUser">
+   <div class="list ">
+       
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Nombre</span>
+    <input type="text" placeholder="Nombre" ng-model="data.username2">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Apellidos</span>
+    <input type="text" placeholder="Apellidos" ng-model="data.userApellido">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Correo Electronico</span>
+    <input type="text" placeholder="Correo Electronico" ng-model="data.userEmail">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Contraseña" name="userPassw" ng-model="data.userPassw2">
+  </label>
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Repetir Contraseña" ng-model="data.userPasswRepeat">
+  </label>
+       
+</div>
    
-	<ion-radio ng-model="choice" class=" button button-energized col" ng-model="sexo" ng-value="USUARIO" ng-value="'A'"><label class="ion-briefcase icon-left col">USUARIO</label></ion-radio>
-  <ion-radio ng-model="choice" class="button button-balanced  col" ng-model="sexo" ng-value="EMPRESA" ng-value="'B'"><label class="ion-briefcase icon-left col">EMPRESA</label></ion-radio>
-	
+</div>
+    
+<div ng-show="showFormEmpresa">
+      <div class="list ">
+      
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Empresa</span>
+    <input type="text" placeholder="Empresa">
+  </label>
+  
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Empresa</span>
+    <input type="text" placeholder="Empresa">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">CIF</span>
+    <input type="text" placeholder="CIF">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Correo Electronico</span>
+    <input type="text" placeholder="Correo Electronico">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Contraseña">
+  </label>
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">PasswordRepeat</span>
+    <input type="password" placeholder="Repetir Contraseña">
+  </label>
+          
+</div>
+    
+</div>
+    
 </label>
 
 
+
 	
+    
+      
+        
+        
+ 
+           
+                <form ng-submit="submit()">
+                    <label class="item">
+                        <span class="input-label">Username</span>
+                        <input type="text" name="username" placeholder="enter username" ng-model="data.username">
+                    </label>
+                    
+                    <label class="item">
+                    <span class="input-label">Password</span>
+                     <input type="text" placeholder="Contraseña" name="userPassw" ng-model="data.userPassw">
+                     </label>
+                    
+ 
+                    <input class="button button-block button-positive" type="submit" name="submit" value="Submit to server">                    
+                </form>
+ 
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        Response: <b ng-bind="response"></b>
+                    </div>
+                </div>
+            </ion-content>
+        
+    
+    
+    
 
-<!-- Para el formulario de registro un pequeño ejemplo -->
-<!-- <label class="item item-input"><input type="text" placeholder="Nombre"> </label> -->
-			  
 
-
-<!-- contraseña -->
-				<!--<label class="item item-input"><input type="password" placeholder="Confirmar contraseña"> </label> -->
 			
 			<div class="loginButton"><button class="button ion-person button-block button-stable"> Registrarse </button>  </div>
 	  </div>
@@ -43,3 +136,4 @@
 
   </ion-content>
 </ion-view>
+</body>

@@ -3088,6 +3088,9 @@ a {
   -webkit-tap-highlight-color: transparent; }
   a[href]:hover {
     cursor: pointer; }
+    
+    
+    
 
 /* ==========================================================================
    Typography
@@ -4607,7 +4610,7 @@ a.subdued {
   background-color: #f8f8f8;
   background-image: none; }
 .tabs-striped.tabs-background-positive .tabs {
-  background-color: #387ef5;
+  background-color: #555;
   background-image: none; }
 .tabs-striped.tabs-background-calm .tabs {
   background-color: #11c1f3;
