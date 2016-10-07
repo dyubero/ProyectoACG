@@ -50,5 +50,17 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $stateParams , Profiles) {
 	$scope.profiles = Profiles.all();
-});
+})
 
+// buscador//
+.controller('buscadorCtrl', function($scope) {
+
+alert("holaaa");
+/*
+	$scope.MostrarFiltroPersona=function(){
+		$scope.showFilterBusqueda = true; 
+
+
+	}
+	*/
+});

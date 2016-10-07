@@ -49,7 +49,9 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'templates/buscador.html',
+     // para cambiar entro lo del menu poner la pagina en la que este por ejemplo : Paginainicio
+
     controller: 'AppCtrl'
   })
 
@@ -68,7 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     url: '/signup',
     views: {
       'menuContent': {
-        templateUrl: 'templates/tab-signup.html',
+        templateUrl: 'templates/menu.html',
       }
    },
 	authStatus: false
@@ -87,6 +89,18 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 	 authStatus: true
   })
 
+ // ------------------ //
+
+.state('app.buscador', {
+    url: '/buscador',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/buscador.html',
+		controller: 'buscadorCtrl'
+      }
+     },
+	 authStatus: true
+  })
 
     .state('app.profiles', {
       url: '/profiles',
