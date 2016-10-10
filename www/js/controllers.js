@@ -15,20 +15,11 @@ angular.module('starter.controllers', [])
   
    
         //--------------------------------------------
-        $scope.login = function (user) {
+       
 
-            if (typeof (user) == 'undefined') {
-                $scope.showAlert('Por favor, rellene nombre de usuario y contraseña para continuar.');
-                return false;
-            }
+           
 
-            if (user.username == 'Prueba@gmail.com' && user.password == 'demo') {
-                $location.path('/app/area');
-            } else {
-                $scope.showAlert('CONTRASEÑA O USUARIO INVALIDO.');
-            }
-
-        };
+        
     
     
   
@@ -64,9 +55,42 @@ angular.module('starter.controllers', [])
         $scope.profiles = Profiles.all();
     })
 
-    .controller('singinCtrl', function ($scope, $stateParams, Profiles) {
-        $scope.profiles = Profiles.all();
-    })
+    .controller('singinCtrl', function ($scope, $http,$state) {
+        
+        $scope.data = {}
+        $scope.LogInCheck = function () {
+
+            
+alert($scope.response);
+
+            
+        var link2 = 'http://localHost:8080/PHPFilesACG/checkLog.php';
+        if(($scope.data.usernamelog != null && $scope.data.usernamelog != "") && ($scope.data.passwordlog != null && $scope.data.passwordlog != "")){
+            $http.post(link2, {"usernamelog": $scope.data.usernamelog, "passwordlog": $scope.data.passwordlog}).then(function(res){
+                $scope.response = res.data;
+                alert("bien login");
+                });
+            
+
+
+if($scope.response != ""){
+    $state.go('app.area');
+    $scope.response = "";
+    
+}
+
+
+
+
+            }
+      
+
+
+
+
+        };
+
+        })
 
     .controller('singupCtrl', function ($scope, $http) {
         $scope.showFormUser = true;
@@ -83,7 +107,7 @@ angular.module('starter.controllers', [])
             $scope.showFormUser = false;
             $scope.showFormEmpresa = true;
         };
-
+        
 
 
 
@@ -94,11 +118,13 @@ angular.module('starter.controllers', [])
             ($scope.data.userApellido != null && $scope.data.userApellido != "") && ($scope.data.userEmail != null && $scope.data.userEmail != "") 
             && ($scope.data.genre != null && $scope.data.genre != "") && ($scope.data.userPasswRepeat != null && $scope.data.userPasswRepeat != "")) {
                 if ($scope.data.userPassw == $scope.data.userPasswRepeat) {
-                    $http.post(link, { "username": $scope.data.username, "userPassw": $scope.data.userPassw, "userApellido": $scope.data.userApellido, "userEmail": $scope.data.userEmail, "genre": $scope.data.genre }).then(function (res) {
+                    $http.post(link, { "username": $scope.data.username, "userPassw": $scope.data.userPassw, "userApellido": $scope.data.userApellido,
+                                       "userEmail": $scope.data.userEmail, "genre": $scope.data.genre }).then(function (res) {
                         $scope.response = res.data;
+                        alert("envia json");
                     });
 
-                    alert("noooo");
+                    alert("entraenJson");
                 } else {
                     alert("No son iguales las contraseñas");
                 }
