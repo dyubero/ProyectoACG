@@ -1,3 +1,9 @@
+
+
+
+
+
+
 angular.module('starter.controllers', [])
 
     .controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout, $location, $ionicPopup) {
@@ -20,16 +26,40 @@ angular.module('starter.controllers', [])
            
 
         
-    
+    $scope.showPopup = function() {
+  $scope.data = {};
+
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input type="password" ng-model="data.wifi">',
+    title: 'Enter Wi-Fi Password',
+    subTitle: 'Please use normal things',
+    scope: $scope,
+    buttons: [
+      { text: 'Cancel' },
+      {
+        text: '<b>Save</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.wifi) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
+          }
+        }
+      }
+    ]
+  });
     
   
-  
+    }
 
 
     
     
         //--------------------------------------------
-        $scope.logout = function () { $location.path('/app/login'); };
+        $scope.logout = function () { $location.path('/app/PantallaInicioCandidatos'); };
         //--------------------------------------------
         // An alert dialog
         $scope.showAlert = function (msg) {
@@ -40,6 +70,11 @@ angular.module('starter.controllers', [])
         };
         //--------------------------------------------
     })
+
+.controller('menuCtrl', function ($scope, Profiles) {
+
+
+})
 
     .controller('ProfilesCtrl', function ($scope, Profiles) {
         $scope.profiles = Profiles.all();
@@ -92,6 +127,9 @@ if($scope.response != ""){
 
         })
 
+       
+
+
     .controller('singupCtrl', function ($scope, $http) {
         $scope.showFormUser = true;
         $scope.showFormEmpresa = false;
@@ -133,7 +171,52 @@ if($scope.response != ""){
             }
         };
     })
+
+
+
+
+
+
     .controller('AreaCtrl', function ($scope, $stateParams, Profiles) {
-        $scope.profiles = Profiles.all();
+    
     })
-;
+
+ .controller('PantallaInicioCandidatosCtrl', function ($scope, $stateParams,$state, Profiles) {
+        
+$scope.comenzarApp = function(){
+    $state.go('app.login');
+    
+}
+
+    })
+
+app = angular.module('ModalDemo', []);
+app.directive('modalDialog', function() {
+  return {
+    restrict: 'E',  
+    scope: {
+      show: '='
+    },
+    replace: true, // Replace with the template below
+    transclude: true, // we want to insert custom content inside the directive
+    link: function(scope, element, attrs) {
+      scope.dialogStyle = {};
+      if (attrs.width)
+        scope.dialogStyle.width = attrs.width;
+      if (attrs.height)
+        scope.dialogStyle.height = attrs.height;
+      scope.hideModal = function() {
+        scope.show = false;
+      };
+    },
+    template: "<div class='ng-modal' ng-show='show'><div class='ng-modal-overlay' ng-click='hideModal()'></div><div class='ng-modal-dialog' ng-style='dialogStyle'><div class='ng-modal-close' ng-click='hideModal()'>X</div><div class='ng-modal-dialog-content' ng-transclude></div></div></div>"
+  };
+})
+
+
+app.controller('MyCtrl', ['$scope', function($scope) {
+  $scope.modalShown = false;
+  $scope.toggleModal = function() {
+    $scope.modalShown = !$scope.modalShown;
+  };
+}]);

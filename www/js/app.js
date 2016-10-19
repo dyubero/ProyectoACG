@@ -88,6 +88,27 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
   })
 //--------------------------------------
 
+.state('app.menu', {
+    url: '/menu',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/menu.html',
+        controller: 'menuCtrl'
+      }
+    },
+    authStatus: true
+  })
+
+.state('app.PantallaInicioCandidatos', {
+    url: '/PantallaInicioCandidatos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/PantallaInicioCandidatos.html',
+        controller: 'PantallaInicioCandidatosCtrl'
+      }
+    },
+    authStatus: true
+  })
 
 .state('app.area', {
     url: '/area',
@@ -133,5 +154,5 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/PantallaInicioCandidatos');
 });
