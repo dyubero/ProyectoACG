@@ -29,28 +29,7 @@ angular.module('starter.controllers', [])
     $scope.showPopup = function() {
   $scope.data = {};
 
-  // An elaborate, custom popup
-  var myPopup = $ionicPopup.show({
-    template: '<input type="password" ng-model="data.wifi">',
-    title: 'Enter Wi-Fi Password',
-    subTitle: 'Please use normal things',
-    scope: $scope,
-    buttons: [
-      { text: 'Cancel' },
-      {
-        text: '<b>Save</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.data.wifi) {
-            //don't allow the user to close unless he enters wifi password
-            e.preventDefault();
-          } else {
-            return $scope.data.wifi;
-          }
-        }
-      }
-    ]
-  });
+
     
   
     }
@@ -71,10 +50,7 @@ angular.module('starter.controllers', [])
         //--------------------------------------------
     })
 
-.controller('menuCtrl', function ($scope, Profiles) {
 
-
-})
 
     .controller('ProfilesCtrl', function ($scope, Profiles) {
         $scope.profiles = Profiles.all();
@@ -95,8 +71,9 @@ angular.module('starter.controllers', [])
         $scope.data = {}
         $scope.LogInCheck = function () {
 
+            $state.go('app.ajustes');
             
-alert($scope.response);
+
 
             
         var link2 = 'http://localHost:8080/PHPFilesACG/checkLog.php';
@@ -108,11 +85,7 @@ alert($scope.response);
             
 
 
-if($scope.response != ""){
-    $state.go('app.area');
-    $scope.response = "";
-    
-}
+
 
 
 
@@ -126,6 +99,8 @@ if($scope.response != ""){
         };
 
         })
+
+       
 
        
 
@@ -174,12 +149,31 @@ if($scope.response != ""){
 
 
 
+.controller('AreaCtrl', function($scope) {
 
+})
 
+.controller('perfilEmpresaCtrl', function($scope) {
 
-    .controller('AreaCtrl', function ($scope, $stateParams, Profiles) {
-    
-    })
+})
+
+.controller('AjustesCtrl', function($scope) {
+
+})
+
+.controller('OfertasCtrl', function($scope) {
+
+})
+
+.controller('BuscadorCtrl', function($scope) {
+
+})
+
+.controller('TrabajadoresCtrl', function($scope) {
+
+})
+
+ 
 
  .controller('PantallaInicioCandidatosCtrl', function ($scope, $stateParams,$state, Profiles) {
         
@@ -188,35 +182,8 @@ $scope.comenzarApp = function(){
     
 }
 
-    })
-
-app = angular.module('ModalDemo', []);
-app.directive('modalDialog', function() {
-  return {
-    restrict: 'E',  
-    scope: {
-      show: '='
-    },
-    replace: true, // Replace with the template below
-    transclude: true, // we want to insert custom content inside the directive
-    link: function(scope, element, attrs) {
-      scope.dialogStyle = {};
-      if (attrs.width)
-        scope.dialogStyle.width = attrs.width;
-      if (attrs.height)
-        scope.dialogStyle.height = attrs.height;
-      scope.hideModal = function() {
-        scope.show = false;
-      };
-    },
-    template: "<div class='ng-modal' ng-show='show'><div class='ng-modal-overlay' ng-click='hideModal()'></div><div class='ng-modal-dialog' ng-style='dialogStyle'><div class='ng-modal-close' ng-click='hideModal()'>X</div><div class='ng-modal-dialog-content' ng-transclude></div></div></div>"
-  };
-})
+    });
 
 
-app.controller('MyCtrl', ['$scope', function($scope) {
-  $scope.modalShown = false;
-  $scope.toggleModal = function() {
-    $scope.modalShown = !$scope.modalShown;
-  };
-}]);
+
+

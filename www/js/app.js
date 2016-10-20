@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 		console.log("URL : "+toState.url);
-		if(toState.url=='/area'){
+		if(toState.url=='/login'){
 			console.log("match : "+toState.url);
 			$timeout(function(){
 				angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
@@ -76,6 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     },
 	authStatus: false
   })
+  
  .state('app.signup', {
     url: '/signup',
     views: {
@@ -132,6 +133,64 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
      },
 	 authStatus: true
   })
+
+   .state('app.perfilEmpresa', {
+    url: '/perfilEmpresa',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/perfilEmpresa.html',
+		controller: 'perfilEmpresaCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+
+  .state('app.ajustes', {
+    url: '/ajustes',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ajustes.html',
+		controller: 'AjustesCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+   .state('app.ofertas', {
+    url: '/ofertas',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ofertas.html',
+		controller: 'OfertasCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+   .state('app.buscador', {
+    url: '/buscador',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/buscador.html',
+		controller: 'BuscadorCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+
+ .state('app.trabajadores', {
+    url: '/trabajadores',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/trabajadores.html',
+		controller: 'TrabajadoresCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
 
 
     .state('app.profiles', {
