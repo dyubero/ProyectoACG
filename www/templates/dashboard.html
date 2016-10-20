@@ -1,10 +1,54 @@
-<ion-view view-title="MARCAS" hide-back-button="true">
-  <ion-content>
-		<a>holamundo</a>
-	   <div class="card" ng-repeat="profilelist in profiles" >
-		  <div class="item item-divider">{{profilelist.name}}</div>
-		  <div class="item item-text-wrap">{{profilelist.deseg}}</div>
-	  </div>
+<ion-view view-title="PERFIL" hide-back-button="true" hide-nav-bar="false"> 
+    <ion-content has-header="true">
+  
+			<!-- pagina del perfil desde un punto de vista de propietario del mismo -->
+		<div class="profile-bg">
+                <img src="http://mwcclub.mahindraworldcity.com/wp-content/themes/gimnasio/images/tnc-icon.png" width="100px" height="80">
+        		<img src="http://www.optimummove.com/wp-content/uploads/2016/05/university.png" width="100px" height="80">
+                <img src="http://www.motunovu.com/wp-content/uploads/capital_icon_target.png" width="100px" height="80">
+                <img src="https://lh3.googleusercontent.com/llqyN3lI4N0ubGyHgct_tdFpL5ly4215vWMTBNSMOG7DUbHq15TRJ-kCUWSs6wTznnh1=w300" width="100px" height="80">
+                <img src="https://static1.squarespace.com/static/54ee83d8e4b0a0e0c108ff4d/5721c7a9f699bbaf86a922d7/5721c84e2eeb81e76d8741f9/1465854756278/OSSIC-Ear-Icon-XSm.png" width="100px" height="80">
+                 <img src="https://lh3.googleusercontent.com/llqyN3lI4N0ubGyHgct_tdFpL5ly4215vWMTBNSMOG7DUbHq15TRJ-kCUWSs6wTznnh1=w300" width="100px" height="80">
+                <img src="" width="100px" height="80">
+                <img src="" width="100px" height="80">
+		</div>
+      <div id="content">
+          <button class="button icon ion-settings col-5" href="#/app/ajustes"></button>
+				       <div id="profile-info">
+                           
+          <img id="profile-image" src="https://pbs.twimg.com/profile_images/2185328734/fiora_by_yy6242-d4ukurc_400x400.png">
+					
+          <h3 id="profile-name">Fiora Laurent</h3>
+          <span id="profile-description" class="content">26 Años, Demacia(Runeterra)</span>
+        </div>
+        <ion-list>
+            <button class="button button-balanced col" > Contacto </button>
+            <div class="post-options">
+            </div>
+            </div>
+        </ion-list>
+				<div class="content row">
+					<button class="button button-calm icon ion-person icon-left col">Personal</button>
+                    <button class="button button-calm ion-briefcase icon-left col">Profesional</button>
+				</div>
+                <div class="row">
+                    <div>
+					<iframe width="200" height="100" class="col" src="https://www.youtube.com/embed/iuE8QFy98zs" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                    <iframe  width="200" height="100" class="col" src="https://www.youtube.com/embed/GMcuT-xwTxg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+				</div>
+                <div class="row">
+                    <div>
+					<iframe width="200" height="100" class="col" src="https://www.youtube.com/embed/iuE8QFy98zs" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                    <iframe  width="200" height="100" class="col" src="https://www.youtube.com/embed/GMcuT-xwTxg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+				</div>
     </ion-list>
-  </ion-content>
+    </ion-content>
 </ion-view>

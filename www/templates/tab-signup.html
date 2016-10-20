@@ -1,3 +1,5 @@
+
+
 <div class="tabs-striped  tabs-background-positive tabs-color-light">
     <div class="tabs">
       <a class="tab-item " href="#/app/login"><i class="icon ion-unlocked"></i> Login </a>
@@ -14,30 +16,129 @@
 		   <div class="app-logo"><img src=""></div>
 			
 
-<!-- SELECCIONAR EMPRESA O USUARIO -->
+
 
 
 
 <!-- Empresa o usuario -->
-<label class ="item row">
+<form ng-submit="submit()">
+
+<label class ="item" style="background-color:#E0E0E0;">
+   <div class="row">
+	<ion-radio name="chooseForm" ng-model="FormShow" class=" button button-energized col " ng-click="showForm1()"><h5><div class="ion-man"></div>USUARIO </h5></ion-radio>
+  <ion-radio name="chooseForm" ng-model="FormShow" class="button button-balanced  col" ng-value="false" ng-click="showForm2()"><h5><div class="ion-briefcase"></div>EMPRESA</h5></ion-radio>
+   </div>
+    <div ng-show="showFormUser">
+        
+        
+             
+                   
+                    
+                    
+                    
+ 
+                 
+ 
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        Response: <b ng-bind="response"></b>
+                    </div>
+                </div>
+        
+        
+   <div class="list ">
+       
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Nombre</span>
+    <input type="text" placeholder="Nombre" name="username" ng-model="data.username">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Apellidos</span>
+    <input type="text" placeholder="Apellidos" ng-model="data.userApellido">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Correo Electronico</span>
+    <input type="text" placeholder="Correo Electronico" ng-model="data.userEmail">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Contraseña" name="userPassw" ng-model="data.userPassw">
+  </label>
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Repetir Contraseña" ng-model="data.userPasswRepeat">
+  </label>
+  </div>
+  <div class="row">
+      
+      <ion-radio name="genre" class=" button button-royal col " ng-value="1" ng-model="data.genre"><h5><div class="ion-female"></div>MUJER </h5></ion-radio>
+      <ion-radio name="genre" class=" button button-positive col " ng-value="2" ng-model="data.genre"><h5><div class="ion-male"></div>Hombre </h5></ion-radio>
+  </div>
+       
+
    
-	<ion-radio ng-model="choice" class=" button button-energized ion-woman col" ng-model="sexo" ng-value="USUARIO" ng-value="'A'">USUARIO</ion-radio>
-  <ion-radio ng-model="choice" class="button button-balanced ion-briefcase col" ng-model="sexo" ng-value="EMPRESA" ng-value="'B'">EMPRESA</ion-radio>
-	
+</div>
+    
+<div ng-show="showFormEmpresa">
+    
+                 
+ 
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        Response: <b ng-bind="response"></b>
+                    </div>
+                </div>
+        
+        
+   <div class="list ">
+       
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Nombre</span>
+    <input type="text" placeholder="Empresa" name="username" ng-model="data.companyName">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Apellidos</span>
+    <input type="text" placeholder="CIF" ng-model="data.companyCIF">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Correo Electronico</span>
+    <input type="text" placeholder="Correo Electronico" ng-model="data.companyEmail">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Contraseña" name="userPassw" ng-model="data.companyPassw">
+  </label>
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Repetir Contraseña" ng-model="data.companyPasswRepeat">
+  </label>
+       
+</div>
+    
+</div>
+    
 </label>
 
 
-	
+                    
+ <div class="loginButton"><button class="button ion-person button-block button-stable" type="submit"> Registrarse </button>  </div>
+                  
+                </form>                
+              
+        
+    
+    
+    
 
-<!-- Para el formulario de registro un pequeño ejemplo -->
-<!-- <label class="item item-input"><input type="text" placeholder="Nombre"> </label> -->
-			  
 
-
-<!-- contraseña -->
-				<!--<label class="item item-input"><input type="password" placeholder="Confirmar contraseña"> </label> -->
 			
-			<div class="loginButton"><button class="button ion-person button-block button-stable"> Registrarse </button>  </div>
+			
 	  </div>
   </div>
 

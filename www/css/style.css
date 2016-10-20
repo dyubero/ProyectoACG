@@ -3088,6 +3088,9 @@ a {
   -webkit-tap-highlight-color: transparent; }
   a[href]:hover {
     cursor: pointer; }
+    
+    
+    
 
 /* ==========================================================================
    Typography
@@ -3860,8 +3863,8 @@ a.subdued {
   height: 44px;
   border-width: 0;
   border-style: solid;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid #ddd;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid #ddd;
   background-color: white;
   /* border-width: 1px will actually create 2 device pixels on retina */
   /* this nifty trick sets an actual 1px border on hi-res displays */
@@ -4607,7 +4610,7 @@ a.subdued {
   background-color: #f8f8f8;
   background-image: none; }
 .tabs-striped.tabs-background-positive .tabs {
-  background-color: #387ef5;
+  background-color: #555;
   background-image: none; }
 .tabs-striped.tabs-background-calm .tabs {
   background-color: #11c1f3;

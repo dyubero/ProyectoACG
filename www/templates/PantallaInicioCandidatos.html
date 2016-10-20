@@ -1,0 +1,78 @@
+
+<!-- INICIO SESION CANDIDATOS -->
+
+<html>
+  <head>
+    <ion-view hide-nav-bar="true">
+        <ion-content direction="x">    
+        
+     <button class="button button-header button-block button-balanced" ng-click="comenzarApp()" style="margin:0px; text-align:center;">
+ <h4>COMENZAR</h4>
+</button>
+
+
+ <!-- INSERTAR GALERIA DE IMAGENES -->
+ 
+<ion-slide-box style="z-index:-1; position=absolute; left:0px; top:0px;">
+     
+    <ion-slide>
+       
+        <img style="width:115%; " src="http://photo.foter.com/photos/pi/239/modern-small-home-office-with-white-furniture-and-sofa-stripe-cushions-small-home-office-design-ideas-for-your-dreams.jpg">
+    </ion-slide>
+    <ion-slide>
+        <img style="width: 115%;" src="http://photo.foter.com/photos/pi/239/modern-small-home-office-with-white-furniture-and-sofa-stripe-cushions-small-home-office-design-ideas-for-your-dreams.jpg">
+    </ion-slide> 
+    <ion-slide>
+        <img style="width: 115%;" src="http://photo.foter.com/photos/pi/239/modern-small-home-office-with-white-furniture-and-sofa-stripe-cushions-small-home-office-design-ideas-for-your-dreams.jpg">
+    </ion-slide>
+</ion-slide-box>
+<div class="row">
+<div class="col"></div>
+<div class="move col ">
+    <img style="width: 100%; z-index:-2;" src="http://logok.org/wp-content/uploads/2014/12/Tesla_logo.png">
+    </div>
+    <div class="col"></div>
+ </div>
+</ion-content>
+  </ion-view>
+		<style>
+      
+.move {
+    text-align:center;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    top:600px;
+    
+    position:relative ;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-name: logo;
+    
+    
+    animation-fill-mode:both;
+
+    animation-direction:alternate;
+    animation-duration: 8s;
+    animation-delay: 0.5s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes logo {
+    0%   {background-color:transparent;height:100%; left:0px; top:800px;}
+
+    100% {background-color:transparent;height:200%; left:0px; top:-500px;}
+}
+
+/* Standard syntax */
+@keyframes logo {
+    0%   {background-color:transparent;height:100%; left:0px; top:800px;}
+
+    100% {background-color:transparent;height:200%; left:0px; top:-500px;}
+}
+</style>
+
+
+  </body>
+</html>

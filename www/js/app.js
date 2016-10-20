@@ -20,6 +20,14 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+  
+  
+  
+  
+  
+  
+  
+  
 
      $rootScope.authStatus = false;
 	 //stateChange event
@@ -33,15 +41,18 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 		console.log("URL : "+toState.url);
-		if(toState.url=='/dashboard'){
+		if(toState.url=='/login'){
 			console.log("match : "+toState.url);
 			$timeout(function(){
 				angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
 			},1000);
 		}	
 	});
-
+        
 })
+
+
+
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -59,21 +70,57 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/tab-signin.html'
+        templateUrl: 'templates/tab-signin.html',
+        controller: 'singinCtrl'
       }
     },
 	authStatus: false
   })
+  
  .state('app.signup', {
     url: '/signup',
     views: {
       'menuContent': {
         templateUrl: 'templates/tab-signup.html',
+        controller: 'singupCtrl'
       }
    },
 	authStatus: false
   })
 //--------------------------------------
+
+.state('app.menu', {
+    url: '/menu',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/menu.html',
+        controller: 'menuCtrl'
+      }
+    },
+    authStatus: true
+  })
+
+.state('app.PantallaInicioCandidatos', {
+    url: '/PantallaInicioCandidatos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/PantallaInicioCandidatos.html',
+        controller: 'PantallaInicioCandidatosCtrl'
+      }
+    },
+    authStatus: true
+  })
+
+.state('app.area', {
+    url: '/area',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/area.html',
+        controller: 'AreaCtrl'
+      }
+    },
+    authStatus: true
+  })
 
 
   .state('app.dashboard', {
@@ -86,6 +133,64 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
      },
 	 authStatus: true
   })
+
+   .state('app.perfilEmpresa', {
+    url: '/perfilEmpresa',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/perfilEmpresa.html',
+		controller: 'perfilEmpresaCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+
+  .state('app.ajustes', {
+    url: '/ajustes',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ajustes.html',
+		controller: 'AjustesCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+   .state('app.ofertas', {
+    url: '/ofertas',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ofertas.html',
+		controller: 'OfertasCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+   .state('app.buscador', {
+    url: '/buscador',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/buscador.html',
+		controller: 'BuscadorCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
+
+ .state('app.trabajadores', {
+    url: '/trabajadores',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/trabajadores.html',
+		controller: 'TrabajadoresCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
 
 
     .state('app.profiles', {
@@ -108,5 +213,5 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/PantallaInicioCandidatos');
 });
