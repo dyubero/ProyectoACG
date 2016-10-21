@@ -397,3 +397,17 @@ body
   -ms-flex-align: center;
   align-items: center;
 }
+.noPadingNoMargin{
+    padding: 0px;
+    margin: 0px;
+}
+.item-custom{
+    padding-bottom: 0px;
+    
+    padding-top: 15px;
+    
+}
+
+.greyBG{
+    background-color: lightgrey;
+}

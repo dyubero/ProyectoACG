@@ -62,8 +62,10 @@ angular.module('starter.controllers', [])
 
 
 
-    .controller('DashCtrl', function ($scope, $stateParams, Profiles) {
-        $scope.profiles = Profiles.all();
+    .controller('DashCtrl', function ($scope, $state) {
+        $scope.goToAjustes = function(){
+$state.go('app.ajustes')
+        }
     })
 
     .controller('singinCtrl', function ($scope, $http,$state) {
@@ -153,7 +155,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('perfilEmpresaCtrl', function($scope) {
+.controller('perfilEmpresaCtrl', function($scope,$ionicLoading) {
 
 })
 
@@ -161,12 +163,25 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('OfertasCtrl', function($scope) {
+.controller('OfertasCtrl', function($scope,$ionicLoading) {
+$ionicLoading.show({
+    template: '<ion-spinner icon="lines" class="spinner-positive"></ion-spinner>',
+    duration: 4000
 
+
+})
 })
 
 .controller('BuscadorCtrl', function($scope) {
+$scope.showSearchFilters = false;
 
+$scope.MostrarFiltroPersona = function (){
+    if($scope.showSearchFilters != true){
+        $scope.showSearchFilters = true;
+    }else{
+        $scope.showSearchFilters = false;
+    }
+}
 })
 
 .controller('TrabajadoresCtrl', function($scope) {
