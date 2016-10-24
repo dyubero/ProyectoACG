@@ -73,7 +73,7 @@ $state.go('app.ajustes')
         $scope.data = {}
         $scope.LogInCheck = function () {
 
-            $state.go('app.ajustes');
+           //$state.go('app.ajustes');
             
 
 
@@ -81,8 +81,8 @@ $state.go('app.ajustes')
         var link2 = 'http://localHost:8080/PHPFilesACG/checkLog.php';
         if(($scope.data.usernamelog != null && $scope.data.usernamelog != "") && ($scope.data.passwordlog != null && $scope.data.passwordlog != "")){
             $http.post(link2, {"usernamelog": $scope.data.usernamelog, "passwordlog": $scope.data.passwordlog}).then(function(res){
-                $scope.response = res.data;
-                alert("bien login");
+                $scope.response2 = res.data;
+                
                 });
             
 
@@ -94,8 +94,6 @@ $state.go('app.ajustes')
 
             }
       
-
-
 
 
         };
