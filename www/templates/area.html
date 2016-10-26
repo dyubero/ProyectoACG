@@ -1,11 +1,23 @@
 
 
 
+<ion-view view-title="area" >
+<ion-content>
 
 
+<div> 
 
-<ion-view view-title="area" hide-back-button="false">
-  <ion-content has-header="true">
-    
-  </ion-content>
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ x.ID }}</td>
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Surname }}</td>
+    <td>{{ x.Email }}</td>
+     <td>{{ x.Password }}</td>
+  </tr>
+</table>
+
+</div>
+
+</ion-content>
 </ion-view>

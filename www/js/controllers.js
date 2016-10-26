@@ -61,8 +61,15 @@ angular.module('starter.controllers', [])
     })
 
 
+.controller('AreaCtrl', function($scope,Profiles,$http) {
+   $http.get('http://localHost:8080/PHPFilesACG/testArea.php')
+    .then(function (response) {$scope.names = response.data.records;});
+})
 
-    .controller('DashCtrl', function ($scope, $state) {
+    .controller('DashCtrl', function ($scope, $state,Profiles) {
+
+ $scope.dashboard = Profiles.all();
+
         $scope.goToAjustes = function(){
 $state.go('app.ajustes')
         }
@@ -149,9 +156,7 @@ $state.go('app.ajustes')
 
 
 
-.controller('AreaCtrl', function($scope) {
 
-})
 
 .controller('perfilEmpresaCtrl', function($scope,$ionicLoading) {
 
