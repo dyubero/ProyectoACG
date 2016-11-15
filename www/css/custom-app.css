@@ -322,7 +322,7 @@ body
         height: 0px;
         background-size: 0%;
         background-position: 0% 0%;
-
+        background-color: #c0c0c0;
         text-align: center;
       }
 
@@ -342,12 +342,12 @@ body
         text-align: center;
       }
       #profile-name {
-        color: #444;
+        color: #828282;
         font-size: 30px;
       }
       #profile-description {
         font-size: 20px;
-        color: #888;
+        color: #828282;
       }
       #profile-description a {
         color: #007aff;
