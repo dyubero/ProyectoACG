@@ -365,8 +365,18 @@ body
 .colorfondoboton{
 
   background: #828282;
- width: 150px;
+
 }
+.buttonLight {
+  color : #828282;
+}  
+
+.colorLetra {
+    color: #828282;
+    background-color: #c0c0c0;
+
+}
+
 
       /*----------------------------------------------Pablo CSS----------------------------*/
       
