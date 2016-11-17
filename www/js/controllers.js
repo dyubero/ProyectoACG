@@ -4,9 +4,11 @@
 
 
 
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngStorage'])
 
-    .controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout, $location, $ionicPopup) {
+    .controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout, $location, $ionicPopup){
+
+
 
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
@@ -23,7 +25,6 @@ angular.module('starter.controllers', [])
         //--------------------------------------------
        
 
-           
 
         
     $scope.showPopup = function() {
@@ -62,8 +63,10 @@ angular.module('starter.controllers', [])
 
 
 .controller('AreaCtrl', function($scope,Profiles,$http) {
-   $http.get('http://localHost:8080/PHPFilesACG/testArea.php')
+   $http.get('http://localHost:8080/PhpACGFiles/testArea.php')
     .then(function (response) {$scope.names = response.data.records;});
+
+
 })
 
     .controller('DashCtrl', function ($scope, $state,Profiles) {
@@ -85,21 +88,14 @@ $state.go('app.ajustes')
 
 
             
-        var link2 = 'http://localHost:8080/PHPFilesACG/checkLog.php';
-        if(($scope.data.usernamelog != null && $scope.data.usernamelog != "") && ($scope.data.passwordlog != null && $scope.data.passwordlog != "")){
+        var link2 = 'http://localHost:8080/PhpACGFiles/checkLog.php';
+      //  if(($scope.data.usernamelog != null && $scope.data.usernamelog != "") && ($scope.data.passwordlog != null && $scope.data.passwordlog != "")){
             $http.post(link2, {"usernamelog": $scope.data.usernamelog, "passwordlog": $scope.data.passwordlog}).then(function(res){
                 $scope.response2 = res.data;
                 
                 });
             
-
-
-
-
-
-
-
-            }
+         //   }
       
 
 
@@ -128,12 +124,12 @@ $state.go('app.ajustes')
             $scope.showFormEmpresa = true;
         };
         
-
+        
 
 
         $scope.data = {};
         $scope.submit = function () {
-            var link = 'http://localHost:8080/PHPFilesACG/api.php';
+            var link = 'http://localHost:8080/PhpACGFiles/api.php';
             if (($scope.data.username != null && $scope.data.username != "") && ($scope.data.userPassw != null && $scope.data.userPassw != "") && 
             ($scope.data.userApellido != null && $scope.data.userApellido != "") && ($scope.data.userEmail != null && $scope.data.userEmail != "") 
             && ($scope.data.genre != null && $scope.data.genre != "") && ($scope.data.userPasswRepeat != null && $scope.data.userPasswRepeat != "")) {
@@ -161,6 +157,14 @@ $state.go('app.ajustes')
 .controller('perfilEmpresaCtrl', function($scope,$ionicLoading) {
 
 })
+
+
+     
+.controller('testArea2Ctrl', function($scope,$localStorage){
+        $scope.$storage = $localStorage.$default({
+          x: 42
+        });
+      })
 
 .controller('AjustesCtrl', function($scope) {
 

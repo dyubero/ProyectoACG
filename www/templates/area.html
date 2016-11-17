@@ -4,18 +4,32 @@
 <ion-view view-title="area" >
 <ion-content>
 
+<b ng-bind="response2"></b>
 
-<div> 
 
-<table>
+<table style="font-size:10px;">
   <tr ng-repeat="x in names">
-    <td>{{ x.ID }}</td>
-    <td>{{ x.Name }}</td>
-    <td>{{ x.Surname }}</td>
-    <td>{{ x.Email }}</td>
-     <td>{{ x.Password }}</td>
+    
+    <td style="border: 2px solid black;">{{ x.ID }}</td>
+    <td style="border: 2px solid black;">{{ x.Name }}</td>
+    <td style="border: 2px solid black;">{{ x.Surname }}</td>
+    <td style="border: 2px solid black;">{{ x.Email }}</td>
+     <td style="border: 2px solid black;">{{ x.Password }}</td>
   </tr>
 </table>
+
+
+
+<div class="row"> 
+<div class="col"></div>
+<div class="col">
+<video width="300px" LOOP  autoplay name="media" poster="img/ionic.png"" controls>
+<source src="http://localhost:8080/PhpACGFiles/20160725_165300.mp4"
+ type="video/mp4">
+</video>
+</div>
+<div class="col"></div>
+
 
 </div>
 
