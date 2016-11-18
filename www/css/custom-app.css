@@ -328,16 +328,17 @@ body
 
       #content {
         position: relative;
-        margin-top: 0px;
+        margin-top: 5px;
         background-color: white;
         padding-top: 0px;
         margin-bottom: 0px;
       }
 
       #profile-info {
-        position: relative;
+        position: absolute;
         top: 0px;
         width: 100%;
+          z-index: 2;
         text-align: center;
       }
       #profile-name {
@@ -348,9 +349,11 @@ body
       #profile-description {
         font-size: 10px;
         color: #828282;
+        text-align: center;
       }
       #profile-description a {
         color: #007aff;
+        text-align: center;
       }
 
       #profile-image {
@@ -360,8 +363,9 @@ body
         width: 128px;
         height: 128px;
         margin: 0px auto 0;
-       
+        margin-left: 50px;
       }
+      
 
 .colorfondoboton{
 
@@ -379,13 +383,11 @@ body
 }
 
 .tamañoIcono{
-     font-size: 40px;
+     font-size: 30px;
 }
-.colorfondobotonAmarillo{
-
-  background: #ffff00;
-  border: 0;
-
+.alineadoDere{
+    margin-left: 50px;
+    text-align: center;
 }
 
       /*----------------------------------------------Pablo CSS----------------------------*/
