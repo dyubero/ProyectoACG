@@ -2,8 +2,8 @@
     <ion-content has-header="true">
 
          <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
-         <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
-  
+    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+
 			<!-- pagina del perfil desde un punto de vista de propietario del mismo -->
 		<div class="profile-bg">
                 <img src="http://www.optimummove.com/wp-content/uploads/2016/05/university.png" height="75px">
@@ -21,7 +21,8 @@
                            
           <img id="profile-image" src="https://pbs.twimg.com/profile_images/2185328734/fiora_by_yy6242-d4ukurc_400x400.png">
 					
-          <h3 id="profile-name">Fiora Laurent</h3>
+                 
+          <h3 id="profile-name"><h1>{{$storage.idUser}}</h1> </h3>
           <span id="profile-description" class="content">26 Años, Demacia(Runeterra)</span>
         </div>
         <ion-list>
@@ -34,6 +35,7 @@
 					<button class="button button-calm icon ion-person icon-left col">Personal</button>
                     <button class="button button-calm ion-briefcase icon-left col">Profesional</button>
 				</div>
+<!--
                 <div class="row">
                     <div>
 					<iframe style="height=100%;" class="col" src="https://www.youtube.com/embed/iuE8QFy98zs" frameborder="0" allowfullscreen></iframe>
@@ -50,7 +52,7 @@
                     <div>
                     <iframe style="height=100%;" class="col" src="https://www.youtube.com/embed/GMcuT-xwTxg" frameborder="0" allowfullscreen></iframe>
                     </div>
-
+-->
 				</div>
     </ion-list>
     </ion-content>

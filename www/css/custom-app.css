@@ -411,3 +411,73 @@ body
 .greyBG{
     background-color: lightgrey;
 }
+
+
+
+
+.i1 { position: fixed; top: 62px; left: 21px; }
+.i2 { position: fixed; top: 0px; left: 105px; }
+.i3 { position: fixed; top: 62px; left: 185px; }
+.i4 { position: fixed; top: 158px; left: 155px; }
+.i5 { position: fixed; top: 158px; left: 50px; }
+.i6 { position: fixed; top: 65px; left: 83px; }
+
+.redondo{
+    border-radius:50%;
+    
+ 
+background-color: #bbb;
+
+}
+.fotoMenu{
+border-image-outset: 100px;
+}
+
+
+.background, .background .pane, .background .item, .background .item-complex .item-content {
+    background-color: yellow;
+}
+
+
+
+.my-menu {
+background-color:black ;
+opacity: 1;
+
+}
+
+.my-menu .item, .my-menu .item-content, .my-menu .item-complex{
+background-color: black;
+color: transparent;
+}
+
+@keyframes popoverAnim {
+     from {opacity: 1;}
+    to {opacity: 1;}
+}
+
+.aparecer{
+  animation-name: popoverAnim;
+
+animation-duration: 1s;
+}
+
+.popover{
+    height: 280px;
+    top:300px !important;
+    left:40px !important;
+ 
+   
+    
+}
+
+.popover {
+    height: auto !important;
+}
+.popover ion-popover-view {
+    position: relative;
+}
+.popover ion-content {
+    top: 0;
+    position: relative;
+}

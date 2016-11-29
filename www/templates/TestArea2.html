@@ -1,20 +1,74 @@
-
 <!DOCTYPE html>
-<ion-view>
-<ion-content>
-<html>
-
-  <head>
-    <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
-    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
-    
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Popover: Nightly</title>
   
+  <link href="css/animate.css" rel="stylesheet">
+  
+    
+
+  
+</head>
+
+<body>
+  <html ng-app="ionicApp" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> 
+    
+    <title>Ionic Popover</title>
+
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    
   </head>
-
-  <body>
-    <button ng-click="$storage.x = $storage.x + 1">{{$storage.x}}</button> + <button ng-click="$storage.y = $storage.y + 1">{{$storage.y}}</button> = {{$storage.x + $storage.y}}
+  <body class="platform-ios background" ng-controller="AppCtrl" >
+    
+    <div class="bar bar-header">
+      <h1 class="title">Popover</h1>
+      
+      </div>
+    </div>
+    <div class="bar bar-subheader">
+      <div class=" button-bar">
+        <button class="button button-light button-android" ng-class="{ 'button\-positive': demo == 'ios' }" ng-click="setPlatform('ios')">
+          iOS
+        </button>
+        <button class="button button-light button-android" ng-class="{ 'button\-positive': demo == 'android' }" ng-click="setPlatform('android')">
+          Android
+        </button>
+        <button class="button button-light button-android" ng-class="{ 'button\-positive': demo == 'ionic' }" ng-click="setPlatform('ionic')">
+          Ionic
+        </button>
+      </div>
+    </div>
+    
+    <ion-content class="padding has-subheader background" >
+      Click the more info icon in the top right. In an actual app the platform style will automatically be set.
+      <div class="buttons">
+        <button class="button button-icon ion-more assertive" ng-click="popover.show($event)">
+          
+        </button>
+    </ion-content>
+    
+    <script id="templates/popover.html" type="text/ng-template">
+     <ion-popover-view class="aparecer animated bounceInUp">
+        <ion-content> 
+<div class="i1"><img height="60px" ng-src="img/AJUSTES.png"></div>
+<div class="i2"><img height="60px" ng-src="img/AÑADIR VIDEO.png"></div>
+<div class="i3"><img height="60px" ng-src="img/BUSCAR.png"></div>
+<div class="i4"><img height="60px" ng-src="img/SUGERENCIAS.png"></div> 
+<div class="i5"><img height="60px" ng-src="img/FAVORITOS.png"></div>
+<div class="i6 redondo"><img height="100px" width="100px" class="fotoMenu" ng-src="img/cutmypic.png"></div>
+  </ion-content>
+      </ion-popover-view>
+    </script>
+    
   </body>
-
 </html>
-</ion-content>
-</ion-view>
+  
+    
+
+</body>
+</html>

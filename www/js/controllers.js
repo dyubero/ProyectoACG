@@ -31,8 +31,6 @@ angular.module('starter.controllers', ['ngStorage'])
   $scope.data = {};
 
 
-    
-  
     }
 
 
@@ -63,13 +61,34 @@ angular.module('starter.controllers', ['ngStorage'])
 
 
 .controller('AreaCtrl', function($scope,Profiles,$http) {
-   $http.get('http://localHost:8080/PhpACGFiles/testArea.php')
-    .then(function (response) {$scope.names = response.data.records;});
+    
+     var linkArea = 'http://localHost:8080/PhpACGFiles/testArea.php';
+$http.post(linkArea, {"userID": 33})
 
+.success(function(){
+    alert("bien");
+})
+
+.error(function(){
+    alert("mal");
+});
+
+
+
+   $http.get('http://localHost:8080/PhpACGFiles/testArea.php')
+
+
+.success(function (response) {$scope.names = response.data.records;})
+
+.error(function(){
+    alert("malGET");
+});
 
 })
 
-    .controller('DashCtrl', function ($scope, $state,Profiles) {
+    .controller('DashCtrl', function ($scope, $state,Profiles,$localStorage) {
+
+$scope.$storage = $localStorage;
 
  $scope.dashboard = Profiles.all();
 
@@ -78,7 +97,7 @@ $state.go('app.ajustes')
         }
     })
 
-    .controller('singinCtrl', function ($scope, $http,$state) {
+    .controller('singinCtrl', function ($scope, $http,$state,$localStorage) {
         
         $scope.data = {}
         $scope.LogInCheck = function () {
@@ -92,6 +111,9 @@ $state.go('app.ajustes')
       //  if(($scope.data.usernamelog != null && $scope.data.usernamelog != "") && ($scope.data.passwordlog != null && $scope.data.passwordlog != "")){
             $http.post(link2, {"usernamelog": $scope.data.usernamelog, "passwordlog": $scope.data.passwordlog}).then(function(res){
                 $scope.response2 = res.data;
+                $scope.$storage = $localStorage.$default({
+                    idUser: 5
+                });
                 
                 });
             
@@ -124,7 +146,7 @@ $state.go('app.ajustes')
             $scope.showFormEmpresa = true;
         };
         
-        
+
 
 
         $scope.data = {};
@@ -160,10 +182,27 @@ $state.go('app.ajustes')
 
 
      
-.controller('testArea2Ctrl', function($scope,$localStorage){
+.controller('testArea2Ctrl', function($scope,$localStorage,$ionicPopover){
         $scope.$storage = $localStorage.$default({
           x: 42
         });
+
+
+  $ionicPopover.fromTemplateUrl('templates/popover.html', {
+    scope: $scope,
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+  $scope.demo = 'ios';
+  $scope.setPlatform = function(p) {
+    document.body.classList.remove('platform-ios');
+    document.body.classList.remove('platform-android');
+    document.body.classList.add('platform-' + p);
+    $scope.demo = p;
+  }
+
+
       })
 
 .controller('AjustesCtrl', function($scope) {
@@ -174,7 +213,6 @@ $state.go('app.ajustes')
 $ionicLoading.show({
     template: '<ion-spinner icon="lines" class="spinner-positive"></ion-spinner>',
     duration: 4000
-
 
 })
 })
