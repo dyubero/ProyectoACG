@@ -1,0 +1,51 @@
+
+<ion-view view-title="Registro Empresa" hide-back-button="false">
+  <ion-content has-header="true">
+    <form ng-submit="submit()">
+
+<label class ="item" style="background-color:#E0E0E0;">
+   <div class="row">
+	<ion-radio name="chooseForm" ng-model="FormShow" class=" button button-energized col " ng-click="showForm1()"><h5><div class="ion-man"></div>USUARIO </h5></ion-radio>
+  <ion-radio name="chooseForm" ng-model="FormShow" class="button button-balanced  col" ng-value="false" ng-click="showForm2()"><h5><div class="ion-briefcase"></div>EMPRESA</h5></ion-radio>
+   </div>
+    <div ng-show="showFormUser">
+    <div ng-show="showFormEmpresa">
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        Response: <b ng-bind="response"></b>
+                    </div>
+                </div>
+        
+        
+   <div class="list ">
+       
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Nombre</span>
+    <input type="text" placeholder="Empresa" name="username" ng-model="data.companyName">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Apellidos</span>
+    <input type="text" placeholder="CIF" ng-model="data.companyCIF">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Correo Electronico</span>
+    <input type="text" placeholder="Correo Electronico" ng-model="data.companyEmail">
+  </label>
+  
+   <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Contraseña" name="userPassw" ng-model="data.companyPassw">
+  </label>
+  <label class="item item-input item-floating-label black-border">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Repetir Contraseña" ng-model="data.companyPasswRepeat">
+  </label>
+       
+</div>
+
+
+
+  </ion-content>
+</ion-view>

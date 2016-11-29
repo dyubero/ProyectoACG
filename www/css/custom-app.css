@@ -381,6 +381,9 @@ body
     background-color: #c0c0c0;
 
 }
+.colorLetraGris {
+    color: #828282;
+}
 
 .tamañoIcono{
      font-size: 30px;
@@ -389,6 +392,18 @@ body
     margin-left: 50px;
     text-align: center;
 }
+.margen{
+    margin-top: -50px;
+    text-align: center;
+}
+.margenBot{
+    margin-bottom: -50px;
+    text-align: center;
+}
+.borde{
+   border-color: #828282;
+}
+
 
       /*----------------------------------------------Pablo CSS----------------------------*/
       
