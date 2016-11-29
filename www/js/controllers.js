@@ -150,7 +150,7 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('AreaCtrl', function($scope) {
+.controller('ReEmCtrl', function($scope) {
 
 })
 
@@ -162,7 +162,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('OfertasCtrl', function($scope) {
+.controller('OfertasCtrl', function($scope, $ionicLoading) {
     $ionicLoading.show({
     template: '<ion-spinner icon="lines" class="spinner-positive"></ion-spinner>',
     duration: 4000
