@@ -111,7 +111,7 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     authStatus: true
   })
 
-.state('app.area', {
+.state('app.registroEmpresa', {
     url: '/area',
     views: {
       'menuContent': {

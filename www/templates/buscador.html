@@ -1,44 +1,57 @@
 
- 
+
 <ion-view view-title="buscador" >
-<ion-content >
+<ion-content>
 
-    <label class ="item row"> 
+    
 
-    <ion-radio ng-model="choice" class="button button-balanced ion-briefcase col" ng-model="sexo" ng-value="EMPRESA" ng-value="'B'">EMPRESAS
-    </ion-radio>    
-	<ion-radio ng-model="choice" class=" button button-energized ion-woman col" ng-model="sexo" ng-value="USUARIO" ng-value="'A'"> PERSONAS 
-    </ion-radio>
 
-    </label>
-
-<button class="button button-block button-stable" ng-click="MostrarFiltroPersona()" >
-  Filtrar La Búsqueda 
-</button>    
-    <ion-header-bar class="bar-subheader item-input-inset">
+   
+    <ion-header-bar class="bar-header item-input-inset">
      <label class="item-input-wrapper">
-         <i class="icon ion-ios7-search placeholder-icon"></i>
+         <i class="icon ion-search placeholder-icon"></i>
          <input type="search" placeholder="BUSCAR" ng-model="filter">
+         
      </label>
     </ion-header-bar>
+<button class="button button-full greyBG" style="margin:0px;" ng-click="MostrarFiltroPersona()" >
+ <h5> Filtrar La Búsqueda </h5>
+</button> 
 
-<div ng-show="showFilterBusqueda"> 
+<div ng-show="showSearchFilters">
 
-  hola
-  <br>
-  hola go 
-  <br>
-  hola pen
-  hola hey!
-  <br>
-  hola 39'3
-  hola quer3
+    <div class="list noPadingNoMargin">
+         <a style="font-family:sans-serif;">Rango de sueldo</a>
+        <div class="row">
+ <label class="item item-input col">
+    <input type="text" placeholder="Desde">
+  </label>
+<label class="item item-input col">
+    <input type="text" placeholder="Hasta">
+  </label>
+    </div>
+    </div>
+
+
+<div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Fecha
+    </div>
+    <select>
+      <option>1 hora</option>
+      <option selected>1 dia</option>
+      <option>1 semana</option>
+      
+    </select>
+  </label>
+
 </div>
 
-<input type="search" ng-model="search.$">
-<div ng-repeat="book in filtered = (books | filter:search)">{{book.title}}</div>
+</div>
+
+
 
 </ion-content>
 </ion-view>
-
-

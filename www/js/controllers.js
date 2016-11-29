@@ -69,17 +69,15 @@ angular.module('starter.controllers', [])
         
     })
     .controller('ProfilesCtrl', function ($scope, Profiles) {
-        $scope.profiles = Profiles.all();
     })
 
     .controller('ProfileCtrl', function ($scope, $stateParams, Profiles) {
-        $scope.profile = Profiles.get($stateParams.profileId);
+        ;
     })
 
-
-
     .controller('DashCtrl', function ($scope, $stateParams, Profiles) {
-        $scope.profiles = Profiles.all();
+
+        
     })
 
     .controller('singinCtrl', function ($scope, $http,$state) {
@@ -87,7 +85,7 @@ angular.module('starter.controllers', [])
         $scope.data = {}
         $scope.LogInCheck = function () {
 
-            $state.go('app.ajustes');
+            $state.go('app.dashboard');
             
 
 
@@ -165,10 +163,25 @@ angular.module('starter.controllers', [])
 })
 
 .controller('OfertasCtrl', function($scope) {
+    $ionicLoading.show({
+    template: '<ion-spinner icon="lines" class="spinner-positive"></ion-spinner>',
+    duration: 4000
+
+
+})
 
 })
 
 .controller('BuscadorCtrl', function($scope) {
+    $scope.showSearchFilters = false;
+
+$scope.MostrarFiltroPersona = function (){
+    if($scope.showSearchFilters != true){
+        $scope.showSearchFilters = true;
+    }else{
+        $scope.showSearchFilters = false;
+    }
+}
 
 })
 
