@@ -122,6 +122,16 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     authStatus: true
   })
 
+  .state('app.FavoritosUsuario', {
+    url: '/FavoritosUsuario',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/FavoritosUsuario.html',
+        controller: 'FavoritosUsuarioCtrl'
+      }
+   },
+	authStatus: false
+  })
 
   .state('app.dashboard', {
     url: '/dashboard',
@@ -191,6 +201,17 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 	 authStatus: true
   })
 
+  .state('app.ActividadReciente', {
+    url: '/ActividadReciente',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ActividadReciente.html',
+		controller: 'ActividadRecienteCtrl'
+      }
+     },
+	 authStatus: true
+  })
+
 
 
     .state('app.profiles', {
@@ -202,6 +223,26 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
         }
       }
     })
+    .state('app.VideoDesdeUsuario', {
+      url: '/VideoDesdeUsuario',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/VideoDesdeUsuario.html',
+          controller: 'VideoDesdeUsuarioCtrl'
+        }
+      }
+    })
+
+      .state('app.PruebaTimer', {
+      url: '/PruebaTimer',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/PruebaTimer.html',
+          controller: 'PruebaTimerCtrl'
+        }
+      }
+    })
+
 
   .state('app.profile', {
     url: '/profile/:profileId',

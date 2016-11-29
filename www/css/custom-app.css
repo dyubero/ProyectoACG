@@ -406,7 +406,7 @@ body
 
 
       /*----------------------------------------------Pablo CSS----------------------------*/
-      
+     
       .button-footer-bar {
   display: -webkit-box;
   display: -moz-box;
@@ -436,4 +436,32 @@ body
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+
+.LogoVideo{
+ display: block;
+        border-radius: 100px;
+        border: 2px solid;
+        width: 128px;
+        height: 128px;
+        margin: 0px auto 0;
+        margin-left: 50px;  
+}
+
+.progress-wrapper {
+  position: relative;
+  margin: 20px auto;
+  font-size: 21px;
+}
+
+.progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 9em;
+  font-size: 1em;
+  text-align: center;
+  font-weight: 100;
+
 }

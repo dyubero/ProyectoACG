@@ -52,6 +52,22 @@ angular.module('starter.controllers', [])
 
 
 
+
+    .controller('FavoritosUsuarioCtrl', function ($scope) {
+        
+    })
+
+    .controller('ActividadRecienteCtrl', function ($scope) { 
+        
+    })
+    
+    .controller('VideoDesdeUsuarioCtrl', function ($scope) {
+        
+    })
+
+    .controller('PruebaTimer', function ($scope) {
+        
+    })
     .controller('ProfilesCtrl', function ($scope, Profiles) {
         $scope.profiles = Profiles.all();
     })
@@ -82,20 +98,7 @@ angular.module('starter.controllers', [])
                 $scope.response = res.data;
                 alert("bien login");
                 });
-            
-
-
-
-
-
-
-
             }
-      
-
-
-
-
         };
 
         })
