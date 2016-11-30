@@ -328,10 +328,17 @@ body
 
       #content {
         position: relative;
-        margin-top: 5px;
+        margin-top: 2px;
         background-color: white;
         padding-top: 0px;
         margin-bottom: 0px;
+      }
+      #contentPerfil {
+        position: relative;
+        margin-top: 5px;
+        background-color: white;
+        padding-top: 0px;
+        margin-bottom: -15px;
       }
 
       #profile-info {
@@ -365,11 +372,33 @@ body
         margin: 0px auto 0;
         margin-left: 50px;
       }
+       #profile-imageFav {
+        display: block;
+        border-radius: 100px;
+        width: 150px;
+        height: 150px;
+        margin-left: 0px;
+        background-color: #c0c0c0;
+      }
       
 
 .colorfondoboton{
 
   background: #828282;
+
+}
+.borderColor{
+
+  background:#13FB13;
+
+}
+.colorfondobotonamarillo{
+
+  background: #ffff00;
+
+}
+.colorLetraamarillo{
+  color: #ffff00;
 
 }
 .buttonLight {
@@ -381,6 +410,14 @@ body
     background-color: #c0c0c0;
 
 }
+.colorLetraClarito {
+    color: #c0c0c0;
+
+}
+.colorfondoFav {
+    background-color: #c0c0c0;
+
+}
 .colorLetraGris {
     color: #828282;
 }
@@ -388,12 +425,27 @@ body
 .tamañoIcono{
      font-size: 30px;
 }
+.tamañoIconoGris{
+     font-size: 30px;
+     color: #828282;
+}
+.tamañoIconoBlanco{
+     font-size: 30px;
+     background-color: #fff;
+}
 .alineadoDere{
     margin-left: 50px;
     text-align: center;
 }
+.alineadoIzq{
+    text-align: left;
+}
 .margen{
     margin-top: -50px;
+    text-align: center;
+}
+.margenbajo{
+    margin-bottom: 0px;
     text-align: center;
 }
 .margenBot{
@@ -402,6 +454,12 @@ body
 }
 .borde{
    border-color: #828282;
+}
+.bordeSin{
+   border: 0px;
+}
+.centrado{
+   text-align: center;
 }
 
 

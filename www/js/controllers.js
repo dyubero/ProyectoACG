@@ -64,6 +64,9 @@ angular.module('starter.controllers', [])
     .controller('VideoDesdeUsuarioCtrl', function ($scope) {
         
     })
+     .controller('VideoDesdeEmpresaCtrl', function ($scope) {
+        
+    })
 
     .controller('PruebaTimer', function ($scope) {
         
@@ -171,6 +174,17 @@ angular.module('starter.controllers', [])
 })
 
 })
+
+.controller('sugerenciasCtrl', function($scope, $ionicLoading) {
+    $ionicLoading.show({
+    template: '<ion-spinner icon="lines" class="spinner-positive"></ion-spinner>',
+    duration: 4000
+
+
+})
+
+})
+
 
 .controller('BuscadorCtrl', function($scope) {
     $scope.showSearchFilters = false;

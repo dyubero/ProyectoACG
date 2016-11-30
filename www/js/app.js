@@ -177,6 +177,16 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
      },
 	 authStatus: true
   })
+  .state('app.sugerencias', {
+    url: '/sugerencias',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/sugerencias.html',
+		controller: 'sugerenciasCtrl'
+      }
+     },
+	 authStatus: true
+  })
 
    .state('app.buscador', {
     url: '/buscador',
@@ -229,6 +239,15 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
         'menuContent': {
           templateUrl: 'templates/VideoDesdeUsuario.html',
           controller: 'VideoDesdeUsuarioCtrl'
+        }
+      }
+    })
+    .state('app.VideoDesdeEmpresa', {
+      url: '/VideoDesdeEmpresa',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/VideoDesdeEmpresa.html',
+          controller: 'VideoDesdeEmpresaCtrl'
         }
       }
     })
