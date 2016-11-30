@@ -338,7 +338,7 @@ body
         margin-top: 5px;
         background-color: white;
         padding-top: 0px;
-        margin-bottom: -15px;
+        margin-bottom: 0px;
       }
 
       #profile-info {
@@ -346,23 +346,30 @@ body
         top: 0px;
         width: 100%;
           z-index: 2;
-        text-align: center;
+        text-align: left;
       }
       #profile-name {
         color: #828282;
         font-size: 15px;
         text-align: center;
       }
+      #profile-namePerfil {
+        color: #828282;
+        font-size: 15px;
+        text-align: center;
+        margin-left:-50px;
+      }
       #profile-description {
         font-size: 10px;
         color: #828282;
         text-align: center;
       }
-      #profile-description a {
-        color: #007aff;
+       #profile-descriptionPerfil {
+        font-size: 10px;
+        color: #828282;
         text-align: center;
+          margin-left:-50px;
       }
-
       #profile-image {
         display: block;
         border-radius: 100px;
@@ -378,7 +385,7 @@ body
         width: 150px;
         height: 150px;
         margin-left: 0px;
-        background-color: #c0c0c0;
+        background-color: #828282;
       }
       
 
