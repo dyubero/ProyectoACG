@@ -469,6 +469,19 @@ body
    text-align: center;
 }
 
+.textoAbajo{
+  position:relative;
+  
+}
+.alineadoIzq{
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: -10px;
+}
+.bajando{
+    margin-top:-5px;
+}
+
 
       /*----------------------------------------------Pablo CSS----------------------------*/
      
